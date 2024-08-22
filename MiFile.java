@@ -1,5 +1,6 @@
 package Archivos;
 
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -110,9 +111,20 @@ public class MiFile {
         }
     }
     
-    public void escribirReemplazar(String dir, String msg){
-        FileWriter wr = null;
+    public void escribirReemplazar(String msg) throws IOException{    
+        FileWriter file = new FileWriter(mf);
+        file.write(msg);
+        file.flush();
     }
-    
-    
+       
+   
+    public void escribir(String msg) throws IOException{
+        FileWriter file = new FileWriter(mf);
+        file.write(msg);
+        file.flush();
+    }
 }
+        
+        
+    
+    

@@ -8,6 +8,7 @@ import java.util.Scanner;
 public class TestMiFile {
     static MiFile mf = new MiFile();
     static Scanner lea = new Scanner(System.in);
+    static String msg="";
     
     public static void main(String[] args) {
         int opcion = 0;
@@ -20,8 +21,8 @@ public class TestMiFile {
         System.out.println("5. Borrar.");
         System.out.println("6. CMD - DIR");
         System.out.println("7. Tree");
-        System.out.println("8. Escribir & Reemplazar");
-        System.out.println("9. Escribir &/o Agregar");
+        System.out.println("8. Escribir y Reemplazar");
+        System.out.println("9. Escribir y/o Agregar");
         System.out.println("10. Salir.");
         System.out.println("Escoja una opcion: ");
         
@@ -50,10 +51,10 @@ public class TestMiFile {
                 mf.tree();
                 break;
             case 8:
-                
+                Reemplazar();
                 break;
             case 9:
-                
+                Agregar();
                 break;
         } 
           
@@ -68,7 +69,17 @@ public class TestMiFile {
         
         } while (opcion != 10);
     }
+    
+    private static void Reemplazar() throws IOException{
+        System.out.println("Ingrese Texto: ");
+        mf.escribirReemplazar(lea.next());
+    }
         
+    private static void Agregar() throws IOException{
+        System.out.println("Ingrese Texto: ");
+        mf.escribir(lea.next());
+    }
+    
     private static void set(){
         System.out.println("Direccion: ");
         mf.setFile(lea.next());
